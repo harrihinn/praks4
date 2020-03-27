@@ -1,0 +1,35 @@
+#!/bin/bash
+#väljastatakse busside arv vastavalt reisijate ja kohtada arvust bussis
+
+# read -p "Sisesta reisijate arv: " reisijad
+echo -n "Sisesta reisijate arv: " 
+read reisijaid
+kohti=1.1
+echo -n "Sisesta kohtade arv bussis: "
+read kohti
+
+lisa=`echo "$reisijaid+ $kohti-0.1" | bc`
+busse=`echo " $lisa / $kohti" | bc`
+ 
+if [ $kohti = "11" ]
+then
+    echo "Kohti_str on 11"
+fi
+
+if [ $kohti -eq 11 ]
+then
+    echo "Kohti_nr on 11"
+fi
+:<<'END'
+pikk kommentaar
+END
+
+if [ $busse = "1" ]
+then
+        taht="."
+else
+        taht="i."
+fi
+
+
+echo "Vaja on $busse buss$taht"

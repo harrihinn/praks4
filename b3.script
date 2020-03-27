@@ -1,0 +1,12 @@
+#!/bin/bash
+# ümardab üles, bash ei arvuta ujukomaga, 
+# kasutame bc käsku ujukomaga arvutamiseks
+
+echo -n "Sisesta ainepunktide arv: "
+read ainepunktid
+echo -n "Sisesta nadalate arv: "
+read nadalad
+# umar=`echo "scale=2; $ainepunktid * 26 / $nadalad" | bc`
+jag=`echo "$nadalad-0.1" |  bc`
+umar=`echo "var=($ainepunktid * 26);(var+ $jag) / $nadalad" | bc`
+echo "$umar "
