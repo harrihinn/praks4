@@ -1,4 +1,5 @@
 #!/bin/bash
 echo -n "Sisesta oma ees- ja perenimi: "
 read nimi pere
+#väljastab
 echo -n "Sinu nimi on $nimi ja prenimi on $pere"
